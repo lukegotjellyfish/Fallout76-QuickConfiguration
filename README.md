@@ -1,4 +1,8 @@
-# DO NOT USE THIS, IT WILL ERASE YOUR MOD ORDER IN FALLOUT76CUSTOM.INI
+# Don't use this if you don't know what you're doing
+Currently using this Fork will wipe your Fallout76Custom.ini: keep a text backup.
+
+This fork was made for my personal use, the base functionality of this program is great but won't let you use .ba2s without mangling them.
+This edited version bypasses this and sets deployment mode to Loose in `./Data/` by default.
 
 ---
 
