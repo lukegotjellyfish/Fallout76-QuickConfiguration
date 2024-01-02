@@ -185,6 +185,7 @@ namespace Fo76ini
                 switch (mod.Method)
                 {
                     case ManagedMod.DeploymentMethod.BundledBA2:
+                        //DISABLED MessageBox.Show("Installed as BundledBA2");  //NEKO_ADDITION: Debug log
                         this.InstallInfo = String.Format(Localization.GetString("modTableInstallInfoBundledBA2"), "\"Data\\Bundled*.ba2\"");
                         this.InstallMethod = Localization.GetString("modsTableTypeBundled");
                         this.InstallInto = "\"Data\"";
@@ -192,6 +193,7 @@ namespace Fo76ini
                         this.InstallMethodColor = Theming.GetColor("Mod.InstallBundledColor", Color.OrangeRed);
                         break;
                     case ManagedMod.DeploymentMethod.SeparateBA2:
+                        //DISABLED MessageBox.Show("Installed as SeperateBA2");  //NEKO_ADDITION: Debug log
                         this.InstallInfo = String.Format(Localization.GetString("modTableInstallInfoSeparateBA2"), $"\"Data\\{mod.ArchiveName}\"", $"\"{installPreset}\"");
                         this.InstallMethod = Localization.GetString("modsTableTypeSeparate");
                         this.InstallInto = "\"Data\"";
@@ -217,6 +219,7 @@ namespace Fo76ini
                         this.InstallInfo = String.Format(Localization.GetString("modTableInstallInfoLooseFiles"), $"\"{mod.RootFolder}\"");
                         this.InstallMethod = Localization.GetString("modsTableTypeLoose");
                         this.InstallInto = $"\"{mod.RootFolder}\"";
+                        //DISABLED MessageBox.Show($"Installing Mod {mod.ArchiveName}\ninto {InstallInto}");  //NEKO_ADDITION: Debug log
                         this.InstallMethodColor = Theming.GetColor("Mod.InstallLooseColor", Color.MediumVioletRed);
                         break;
                 }

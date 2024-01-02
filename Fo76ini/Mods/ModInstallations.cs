@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Windows.Forms;
 
 namespace Fo76ini.Mods
 {
@@ -365,12 +366,13 @@ namespace Fo76ini.Mods
         {
             // TODO: Make a ModUtilities.cs?
             string filePath = Path.GetFullPath(archivePath);
+            //DISABLED  MessageBox.Show(filePath);  //NEKO_ADDITION: Debug log
             string fileName = Path.GetFileName(filePath);
             string fileExtension = Path.GetExtension(filePath);
 
             Directory.CreateDirectory(destinationPath);
 
-            ProgressChanged?.Invoke(Progress.Indetermined($"Extracting {fileName} ..."));
+            //ProgressChanged?.Invoke(Progress.Indetermined($"Extracting {fileName} ..."));
 
             /*
              * Depending on file extention:
@@ -378,7 +380,7 @@ namespace Fo76ini.Mods
 
             // Use Archive2.exe to extract:
             if (fileExtension.ToLower() == ".ba2")
-                Archive2.Extract(filePath, destinationPath);
+                SevenZip.ExtractArchive(filePath, destinationPath);  //NEKO_EDIT: Default = Archive2.Extract(filePath, destinationPath);
 
             // Use 7-Zip (7za.exe) to extract:
             else if (SevenZip.SupportedFileTypes.Contains(fileExtension.ToLower()))

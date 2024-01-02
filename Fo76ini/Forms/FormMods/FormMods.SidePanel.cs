@@ -447,7 +447,7 @@ namespace Fo76ini
 
 
             // Populate values:
-            this.comboBoxModInstallAs.SelectedIndex = 0; // BundledBA2
+            this.comboBoxModInstallAs.SelectedIndex = 2;  //NEKO_EDIT: Default = 0  (0 = BundledBA2 | 2 = Loose files)
             this.comboBoxModArchivePreset.SelectedIndex = 0; // Please select
 
             // NexusMods:
@@ -695,6 +695,7 @@ namespace Fo76ini
          */
 
 
+        // Called when the user switches the deploy method
         private void comboBoxModInstallAs_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (isUpdatingSidePanel)

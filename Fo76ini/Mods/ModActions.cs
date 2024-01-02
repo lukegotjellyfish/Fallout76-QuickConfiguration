@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Fo76ini.Mods
 {
@@ -313,9 +314,10 @@ namespace Fo76ini.Mods
                 string fileExtension = Path.GetExtension(filePath).ToLower().Trim();
 
                 // Extract archives within folder:
-                if (fileExtension == ".ba2" || SevenZip.SupportedFileTypes.Contains(fileExtension))
+                if (SevenZip.SupportedFileTypes.Contains(fileExtension))  //NEKO_EDIT: Default = (fileExtension == ".ba2" || SevenZip.SupportedFileTypes.Contains(fileExtension))
                 {
                     ModInstallations.ExtractArchive(filePath, folderPath, ProgressChanged);
+                    //DISABLED MessageBox.Show($"Deleting {filePath}");  //NEKO_ADDITION: Debug log
                     File.Delete(filePath);
                 }
 

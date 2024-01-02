@@ -1173,7 +1173,7 @@ namespace Fo76ini
                 MsgBox.ShowID("nexusModsNotLoggedIn", MessageBoxIcon.Information);
                 return;
             }
-            bool unpackBA2ByDefault = Configuration.Mods.UnpackBA2ByDefault;
+            bool unpackBA2ByDefault = false;  //NEKO_EDIT: Default = Configuration.Mods.UnpackBA2ByDefault;
             RunThreaded(() => {
                 ShowLoadingUI();
                 CloseSidePanel();

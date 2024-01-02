@@ -163,7 +163,7 @@ namespace Fo76ini.Mods
         /// <summary>
         /// How the mod should get installed. (Pending disk state)
         /// </summary>
-        public DeploymentMethod Method = DeploymentMethod.BundledBA2;
+        public DeploymentMethod Method = DeploymentMethod.LooseFiles;  //NEKO_EDIT: Default = DeploymentMethod.BundledBA2
 
         /// <summary>
         /// How it should get compressed on deployment.
@@ -214,7 +214,7 @@ namespace Fo76ini.Mods
         /// <summary>
         /// The folder where to copy loose files to on deployment.
         /// </summary>
-        public string RootFolder = ".";
+        public string RootFolder = "./Data/";  //NEKO_EDIT: Default = "."
 
         /// <summary>
         /// If deployed as SeparateBA2, what is the archive in Data called? (SeparateBA2)

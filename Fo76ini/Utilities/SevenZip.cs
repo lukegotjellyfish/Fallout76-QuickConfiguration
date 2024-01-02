@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Fo76ini.Utilities
 {
@@ -39,8 +40,8 @@ namespace Fo76ini.Utilities
             if (!File.Exists(ExecPath))
                 throw new FileNotFoundException("7z.exe could not be found.");
 
-            if (!SupportedFileTypes.Contains(Path.GetExtension(sourceArchive).ToLower()))
-                throw new NotSupportedException($"{Path.GetExtension(sourceArchive)} archives are not supported.");
+            if (!SupportedFileTypes.Contains(Path.GetExtension(sourceArchive).ToLower())) { }
+                //NEKO_EDIT: Default = throw new NotSupportedException($"{Path.GetExtension(sourceArchive)} archives are not supported.");
 
             ProcessStartInfo proc = new ProcessStartInfo();
             proc.WindowStyle = ProcessWindowStyle.Hidden;
